@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import flask
+from app import app as application
 import joblib
 
 app = Flask(__name__)
@@ -38,4 +39,4 @@ def preddict():
 
 if __name__ == '__main__':
 
-    app.run(host='0.0.0.0',debug=True, port=80)
+    application.run(host='0.0.0.0',debug=True, port=80)
