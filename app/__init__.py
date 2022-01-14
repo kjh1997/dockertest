@@ -12,7 +12,7 @@ def main_page():
     
 @app.route('/item/predict', methods=["GET","POST"])
 def preddict():
-    model = joblib.load('start/item_model.pkl') 
+    model = joblib.load('app/item_model.pkl') 
     pred_list = []
     recommend_dict = {}
     list_top_5 = []
