@@ -3,7 +3,6 @@ import flask
 import joblib
 import os
 
-from werkzeug.datastructures import T
 app = Flask(__name__)
 
 @app.route('/')
