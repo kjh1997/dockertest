@@ -7,5 +7,5 @@ metadata:
     type: Server
 spec:
   containers:
-  - name: aam411/docker:1.04
-    image: aam411/docker:1.04    
+  - name: mydocker
+    image: aam411/mydocker:1.04 
