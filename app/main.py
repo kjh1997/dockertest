@@ -2,17 +2,16 @@ from flask import Flask, jsonify, request
 import flask
 import joblib
 import os
+application = Flask(__name__)
 
-app = Flask(__name__)
-
-@app.route('/')
+@application .route('/')
 def main_page():
     return "this page is main page"
 
     
-@app.route('/item/predict', methods=["GET","POST"])
+@application .route('/item/predict', methods=["GET","POST"])
 def preddict():
-    model = joblib.load('app/item_model.pkl') 
+    model = joblib.load('item_model.pkl') 
     pred_list = []
     recommend_dict = {}
     list_top_5 = []
@@ -39,4 +38,4 @@ def preddict():
 
 if __name__ == '__main__':
 
-    app.run(host='0.0.0.0',debug=True, port=80)
+    application .run(host='0.0.0.0',debug=True, port=80)
