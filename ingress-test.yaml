@@ -8,13 +8,6 @@ spec:
   rules:
   - http:
       paths:
-      - path: /item/predict
-        pathType: Prefix
-        backend:
-          service:
-            name: flask
-            port:
-              number: 80
       - path: /
         pathType: Prefix
         backend:
@@ -22,6 +15,12 @@ spec:
             name: flask
             port:
               number: 80
-              
+      - path: /item/predict
+        pathType: Prefix
+        backend:
+          service:
+            name: flask
+            port:
+              number: 80
               
             
