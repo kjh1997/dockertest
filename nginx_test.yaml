@@ -16,7 +16,7 @@ spec:
       - name: my-nginx
         image: nginx
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -28,5 +28,5 @@ spec:
   ports:
     - name: http
       port: 8080
-      targetPort: 8080
+      targetPort: 80
   type: LoadBalancer
