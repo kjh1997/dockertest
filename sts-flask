@@ -4,7 +4,7 @@ metadata:
   name: flask-server
 spec:
   replicas: 3
-  serviceName: sts-svc-domain #statefulset need it
+  serviceName: flask-svc #statefulset need it
   selector:
     matchLabels:
       app: flask-server
