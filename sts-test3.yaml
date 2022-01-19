@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: flask-sts
+  name: sts-chk-hn
 spec:
   replicas: 3
   serviceName: sts-svc-domain #statefulset need it
   selector:
     matchLabels:
-      app: flask
+      app: sts
   template:
     metadata:
       labels:
-        app: flask
+        app: sts
     spec:
       containers:
-      - name: flask
+      - name: chk-hn
         image: aam411/mydocker:1.04
+---
 apiVersion: v1
 kind: Service
 metadata:
