@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-flask
+  labels:
+    app: deploy-flask
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy-flask
+  template:
+    metadata:
+      labels:
+        app: deploy-flask
+    spec:
+      containers:
+      - name: deploy-flask
+        image: aam411/mydocker:1.04
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-flask
+spec:
+  selector:
+    app: deploy-flask
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
