@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: flask-server
+spec:
+  replicas: 3
+  serviceName: sts-svc-domain #statefulset need it
+  selector:
+    matchLabels:
+      app: flask-server
+  template:
+    metadata:
+      labels:
+        app: flask-server
+    spec:
+      containers:
+      - name: flask-server
+        image: aam411/mydocker:1.04
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test
+spec:
+  selector:
+    app: sts
+  ports:
+    - port: 80
+  clusterIP: None
