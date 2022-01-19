@@ -20,10 +20,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: test
+  name: flask-svc
 spec:
   selector:
-    app: sts
+    app: flask-server
   ports:
     - port: 80
   clusterIP: None
