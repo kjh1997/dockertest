@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: load-balancer-example
-  name: hello-world
+    app: load-balancer
+  name: flask-deploy
 spec:
   replicas: 3
   selector:
